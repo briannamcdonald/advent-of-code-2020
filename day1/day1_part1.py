@@ -1,10 +1,12 @@
 def main():
-    input = open("day1/input.txt", "r")
-    int_input = [int(num) for num in input]
-    for num in int_input:
-        if (2020 - num) in int_input:
+    data = open("day1/input.txt", "r")
+    int_data = [int(num) for num in data]
+    for num in int_data:
+        if (2020 - num) in int_data:
             num2 = 2020 - num
             print(num * num2)
             break
 
-main()
+
+if __name__ == "__main__":
+    main()

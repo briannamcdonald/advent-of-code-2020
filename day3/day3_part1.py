@@ -1,10 +1,10 @@
 def main():
-    input = open("day3/input.txt", "r")
-    input = [line.strip() for line in input.readlines()]
+    data = open("day3/input.txt", "r")
+    data = [line.strip() for line in data.readlines()]
 
     tree_counter = 0
     x = 0
-    for line in input:
+    for line in data:
         if x >= len(line):
             x = x % (len(line))
         if line[x] == "#":
@@ -13,4 +13,5 @@ def main():
     print(tree_counter)
 
 
-main()
+if __name__ == "__main__":
+    main()

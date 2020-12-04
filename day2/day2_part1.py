@@ -1,8 +1,8 @@
 def main():
-    input = open("day2/input.txt", "r")
+    data = open("day2/input.txt", "r")
 
     valid_counter = 0
-    for line in input:
+    for line in data:
         # split by spaces and organize info into variables
         info = line.split()
         letter = info[1][0]
@@ -23,6 +23,8 @@ def main():
         if letter_counter >= lower_bound and letter_counter <= upper_bound:
             valid_counter += 1
 
-    print(valid_counter)            
+    print(valid_counter)
 
-main()
+
+if __name__ == "__main__":
+    main()

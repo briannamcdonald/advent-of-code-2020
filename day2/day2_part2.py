@@ -1,8 +1,8 @@
 def main():
-    input = open("day2/input.txt", "r")
+    data = open("day2/input.txt", "r")
 
     valid_counter = 0
-    for line in input:
+    for line in data:
         # split by spaces and organize info into variables
         info = line.split()
         letter = info[1][0]
@@ -15,14 +15,18 @@ def main():
 
         position_counter = 0
         for i in range(len(password)):
-            if password[i] == letter and (i == (first_position - 1) or i == (second_position - 1)):
+            if password[i] == letter and (
+                i == (first_position - 1) or i == (second_position - 1)
+            ):
                 position_counter += 1
             if position_counter > 1:
                 break
 
         if position_counter == 1:
             valid_counter += 1
-            
+
     print(valid_counter)
 
-main()
+
+if __name__ == "__main__":
+    main()

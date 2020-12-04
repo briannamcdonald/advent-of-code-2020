@@ -1,10 +1,10 @@
 def main():
-    input = open("day1/input.txt", "r")
-    int_input = [int(num) for num in input]
+    data = open("day1/input.txt", "r")
+    int_data = [int(num) for num in data]
     found = False
-    for n in int_input:
-        for m in int_input:
-            if (2020 - n - m) in int_input:
+    for n in int_data:
+        for m in int_data:
+            if (2020 - n - m) in int_data:
                 l = 2020 - n - m
                 print(n * m * l)
                 found = True
@@ -12,4 +12,6 @@ def main():
         if found:
             break
 
-main()
+
+if __name__ == "__main__":
+    main()
