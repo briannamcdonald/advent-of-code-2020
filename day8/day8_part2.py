@@ -36,15 +36,14 @@ def main():
         line = data[index].split()
         instruction = line[0]
         number = line[1]
+
+        if instruction == "acc":
+            index += 1
+            continue
         # replace jmp with nop or nop with jmp and try running the program
-        if instruction == "jmp":
-            new_data = list(data)
-            new_data[index] = "nop " + number
-            done, accumulator = run_program(new_data)
-        elif instruction == "nop":
-            new_data = list(data)
-            new_data[index] = "jmp " + number
-            done, accumulator = run_program(new_data)
+        new_data = list(data)
+        new_data[index] = "nop " + number if (instruction == "jmp") else "jmp " + number
+        done, accumulator = run_program(new_data)
         index += 1
     print(accumulator)
 
